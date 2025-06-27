@@ -1,0 +1,39 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "hostRequirements": {
+        "cpus": 1
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "editor.formatOnPaste": true,
+                "editor.formatOnSave": true,
+                "editor.minimap.enabled": false,
+                "editor.stickyScroll.enabled": false,
+                "prettier.printWidth": 2000,
+                "prettier.requireConfig": true,
+                "security.workspace.trust.untrustedFiles": "open",
+                "workbench.colorTheme": "Darker Modern",
+                "workbench.editorAssociations": {
+                    "*.svg": "default"
+                },
+                "workbench.iconTheme": "material-icon-theme"
+            },
+            "extensions": [
+                "bradlc.vscode-tailwindcss",
+                "codeium.codeium",
+                "dbaeumer.vscode-eslint",
+                "eamodio.gitlens",
+                "esbenp.prettier-vscode",
+                "mechatroner.rainbow-csv",
+                "ms-python.debugpy",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-vscode-remote.remote-containers",
+                "pkief.material-icon-theme",
+                "aevelop.darker-modern"
+            ]
+        }
+    }
+}
