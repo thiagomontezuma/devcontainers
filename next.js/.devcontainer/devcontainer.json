@@ -1,0 +1,68 @@
+{
+    "name": "My Codespace",
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "aevelop.darker-modern",
+                "anthropic.claude-code",
+                "attilabuti.vscode-mjml",
+                "bradlc.vscode-tailwindcss",
+                "codeium.codeium",
+                "dbaeumer.vscode-eslint",
+                "eamodio.gitlens",
+                "esbenp.prettier-vscode",
+                "google.gemini-cli-vscode-ide-companion",
+                "mechatroner.rainbow-csv",
+                "ms-azuretools.vscode-containers",
+                "ms-python.debugpy",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.vscode-python-envs",
+                "ms-vscode-remote.remote-containers",
+                "nicholishen.mql-over-cpp",
+                "pkief.material-icon-theme",
+                "tombonnike.vscode-status-bar-format-toggle",
+                "tomoki1207.pdf"
+            ],
+            "settings": {
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "editor.fontSize": 12,
+                "editor.formatOnPaste": false,
+                "editor.formatOnSave": true,
+                "editor.formatOnType": false,
+                "editor.minimap.enabled": false,
+                "editor.stickyScroll.enabled": false,
+                "editor.tabSize": 4,
+                "git.autofetch": true,
+                "files.autoSave": "afterDelay",
+                "prettier.documentSelectors": [
+                    "**/*.{js,jsx,ts,tsx,vue,html,css,scss,less,json,md,mdx,graphql,yaml,yml,php}"
+                ],
+                "prettier.printWidth": 2000,
+                "prettier.tabWidth": 4,
+                "prettier.trailingComma": "none",
+                "terminal.integrated.fontSize": 12,
+                "workbench.editorAssociations": {
+                    "*.svg": "default"
+                },
+                "workbench.iconTheme": "material-icon-theme",
+                "workbench.colorTheme": "Darker Modern",
+                "claudeCode.preferredLocation": "panel",
+                "claudeCode.selectedModel": "opus"
+            }
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "22"
+        },
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.11"
+        },
+        "ghcr.io/devcontainers/features/git:1": {},
+
+    },
+    "postCreateCommand": "chmod +x .devcontainer/setup.sh && .devcontainer/setup.sh",
+    "remoteUser": "codespace"
+}
