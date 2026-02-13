@@ -1,68 +1,77 @@
 {
-    "name": "My Codespace",
-    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "name": "Next.js Codespace",
+    // Settings & Addons: Extensions & Packages
     "customizations": {
         "vscode": {
-            "extensions": [
-                "aevelop.darker-modern",
-                "anthropic.claude-code",
-                "attilabuti.vscode-mjml",
-                "bradlc.vscode-tailwindcss",
-                "codeium.codeium",
-                "dbaeumer.vscode-eslint",
-                "eamodio.gitlens",
-                "esbenp.prettier-vscode",
-                "google.gemini-cli-vscode-ide-companion",
-                "mechatroner.rainbow-csv",
-                "ms-azuretools.vscode-containers",
-                "ms-python.debugpy",
-                "ms-python.python",
-                "ms-python.vscode-pylance",
-                "ms-python.vscode-python-envs",
-                "ms-vscode-remote.remote-containers",
-                "nicholishen.mql-over-cpp",
-                "pkief.material-icon-theme",
-                "tombonnike.vscode-status-bar-format-toggle",
-                "tomoki1207.pdf"
-            ],
             "settings": {
                 "editor.defaultFormatter": "esbenp.prettier-vscode",
                 "editor.fontSize": 12,
                 "editor.formatOnPaste": false,
                 "editor.formatOnSave": true,
-                "editor.formatOnType": false,
                 "editor.minimap.enabled": false,
                 "editor.stickyScroll.enabled": false,
                 "editor.tabSize": 4,
                 "git.autofetch": true,
-                "files.autoSave": "afterDelay",
-                "prettier.documentSelectors": [
-                    "**/*.{js,jsx,ts,tsx,vue,html,css,scss,less,json,md,mdx,graphql,yaml,yml,php}"
-                ],
+                "prettier.documentSelectors": ["**/*.{js,jsx,ts,tsx,vue,html,css,scss,less,json,md,mdx,graphql,yaml,yml,php}"],
                 "prettier.printWidth": 2000,
+                "prettier.requireConfig": true,
                 "prettier.tabWidth": 4,
-                "prettier.trailingComma": "none",
-                "terminal.integrated.fontSize": 12,
+                "security.workspace.trust.untrustedFiles": "open",
+                "terminal.integrated.cursorStyle": "line",
+                "terminal.integrated.lineHeight": 1.3,
+                "terminal.integrated.tabs.enabled": false,
+                "workbench.activityBar.location": "top",
+                "workbench.colorTheme": "Darker Modern",
                 "workbench.editorAssociations": {
                     "*.svg": "default"
                 },
-                "workbench.iconTheme": "material-icon-theme",
-                "workbench.colorTheme": "Darker Modern",
-                "claudeCode.preferredLocation": "panel",
-                "claudeCode.selectedModel": "opus"
-            }
+                "workbench.iconTheme": "material-icon-theme"
+            },
+            "extensions": [
+                "aevelop.darker-modern",
+                "bradlc.vscode-tailwindcss",
+                "dbaeumer.vscode-eslint",
+                "eamodio.gitlens",
+                "esbenp.prettier-vscode",
+                "mechatroner.rainbow-csv",
+                "ms-python.debugpy",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "nicholishen.mql-over-cpp",
+                "pkief.material-icon-theme",
+                "tombonnike.vscode-status-bar-format-toggle",
+                "tomoki1207.pdf"
+            ]
         }
     },
+    // Features
     "features": {
         "ghcr.io/devcontainers/features/node:1": {
-            "version": "22"
+            "version": "24"
         },
-        "ghcr.io/devcontainers/features/python:1": {
-            "version": "3.11"
-        },
-        "ghcr.io/devcontainers/features/git:1": {},
-
+        "ghcr.io/devcontainers/features/github-cli:1": {
+            "version": "latest"
+        }
     },
-    "postCreateCommand": "chmod +x .devcontainer/setup.sh && .devcontainer/setup.sh",
+    // Host
+    "hostRequirements": {
+        "cpus": 1
+    },
+    // Ports
+    "portsAttributes": {
+        "3000": {
+            "label": "Application",
+            "onAutoForward": "openPreview"
+        }
+    },
+    "forwardPorts": [3000],
+    // Commands
+    "waitFor": "onCreateCommand",
+    "updateContentCommand": "npm install",
+    "postCreateCommand": "bash .devcontainer/setup.sh",
+    "postAttachCommand": {
+        "server": "npm run dev"
+    },
+    // User
     "remoteUser": "codespace"
 }

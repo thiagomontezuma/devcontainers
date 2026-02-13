@@ -1,12 +1,7 @@
 {
-    "name": "Node/React Codespace",
-    // Settings & Addons: Extensions & Packages
+    "name": "Default Codespace",
+    // Addons: extensions & Packages
     "customizations": {
-        "codespaces": {
-            "openFiles": [
-                "src/App.jsx" // Change this to the path of the file you want to open based on project
-            ]
-        },
         "vscode": {
             "settings": {
                 "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -62,21 +57,9 @@
     "hostRequirements": {
         "cpus": 1
     },
-    // Ports
-    "portsAttributes": {
-        "3000": {
-            "label": "Application",
-            "onAutoForward": "openPreview"
-        }
-    },
-    "forwardPorts": [3000],
     // Commands
     "waitFor": "onCreateCommand",
-    "updateContentCommand": "npm install",
     "postCreateCommand": "bash .devcontainer/setup.sh",
-    "postAttachCommand": {
-        "server": "npm start"
-    },
     // User
     "remoteUser": "codespace"
 }

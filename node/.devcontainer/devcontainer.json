@@ -2,11 +2,6 @@
     "name": "Node/React Codespace",
     // Settings & Addons: Extensions & Packages
     "customizations": {
-        "codespaces": {
-            "openFiles": [
-                "src/App.jsx" // Change this to the path of the file you want to open based on project
-            ]
-        },
         "vscode": {
             "settings": {
                 "editor.defaultFormatter": "esbenp.prettier-vscode",
