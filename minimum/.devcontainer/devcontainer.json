@@ -1,0 +1,49 @@
+{
+    "name": "Minimum Codespace",
+    // Addons: extensions & Packages
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "editor.fontSize": 12,
+                "editor.formatOnPaste": false,
+                "editor.formatOnSave": true,
+                "editor.minimap.enabled": false,
+                "editor.stickyScroll.enabled": false,
+                "editor.tabSize": 4,
+                "git.autofetch": true,
+                "prettier.documentSelectors": ["**/*.{js,jsx,ts,tsx,vue,html,css,scss,less,json,md,mdx,graphql,yaml,yml,php}"],
+                "prettier.printWidth": 2000,
+                "prettier.requireConfig": true,
+                "prettier.tabWidth": 4,
+                "security.workspace.trust.untrustedFiles": "open",
+                "terminal.integrated.cursorStyle": "line",
+                "terminal.integrated.lineHeight": 1.3,
+                "terminal.integrated.tabs.enabled": false,
+                "workbench.activityBar.location": "top",
+                "workbench.colorTheme": "Darker Modern",
+                "workbench.editorAssociations": {
+                    "*.svg": "default"
+                },
+                "workbench.iconTheme": "material-icon-theme"
+            },
+            "extensions": [
+                "aevelop.darker-modern",
+                "bradlc.vscode-tailwindcss",
+                "dbaeumer.vscode-eslint",
+                "eamodio.gitlens",
+                "esbenp.prettier-vscode",
+                "mechatroner.rainbow-csv",
+                "ms-python.debugpy",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "nicholishen.mql-over-cpp",
+                "pkief.material-icon-theme",
+                "tombonnike.vscode-status-bar-format-toggle",
+                "tomoki1207.pdf"
+            ]
+        }
+    },
+    // User
+    "remoteUser": "codespace"
+}
