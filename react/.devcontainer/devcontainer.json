@@ -11,7 +11,7 @@
             "settings": {
                 "editor.defaultFormatter": "esbenp.prettier-vscode",
                 "editor.fontSize": 12,
-                "editor.formatOnPaste": false,
+                "editor.formatOnPaste": true,
                 "editor.formatOnSave": true,
                 "editor.minimap.enabled": false,
                 "editor.stickyScroll.enabled": false,

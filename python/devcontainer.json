@@ -1,6 +1,5 @@
 {
-    "name": "Node/React Codespace",
-    // Settings & Addons: Extensions & Packages
+    "name": "Python Development Codespace",
     "customizations": {
         "vscode": {
             "settings": {
@@ -12,7 +11,9 @@
                 "editor.stickyScroll.enabled": false,
                 "editor.tabSize": 4,
                 "git.autofetch": true,
-                "prettier.documentSelectors": ["**/*.{js,jsx,ts,tsx,vue,html,css,scss,less,json,md,mdx,graphql,yaml,yml,php}"],
+                "prettier.documentSelectors": [
+                    "**/*.{js,jsx,ts,tsx,vue,html,css,scss,less,json,md,mdx,graphql,yaml,yml,php}"
+                ],
                 "prettier.printWidth": 2000,
                 "prettier.requireConfig": true,
                 "prettier.tabWidth": 4,
@@ -25,7 +26,22 @@
                 "workbench.editorAssociations": {
                     "*.svg": "default"
                 },
-                "workbench.iconTheme": "material-icon-theme"
+                "workbench.iconTheme": "material-icon-theme",
+                "[python]": {
+                    "editor.defaultFormatter": "ms-python.black-formatter",
+                    "editor.formatOnSave": true,
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": "explicit"
+                    }
+                },
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": false,
+                "python.linting.flake8Enabled": true,
+                "python.formatting.provider": "none",
+                "python.testing.pytestEnabled": true,
+                "python.testing.unittestEnabled": false,
+                "isort.args": ["--profile", "black"]
             },
             "extensions": [
                 "aevelop.darker-modern",
@@ -37,15 +53,23 @@
                 "ms-python.debugpy",
                 "ms-python.python",
                 "ms-python.vscode-pylance",
+                "ms-python.black-formatter",
+                "ms-python.isort",
+                "ms-python.flake8",
                 "nicholishen.mql-over-cpp",
                 "pkief.material-icon-theme",
                 "tombonnike.vscode-status-bar-format-toggle",
-                "tomoki1207.pdf"
+                "tomoki1207.pdf",
+                "charliermarsh.ruff"
             ]
         }
     },
-    // Features
     "features": {
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.12",
+            "installTools": true,
+            "optimize": true
+        },
         "ghcr.io/devcontainers/features/node:1": {
             "version": "24"
         },
@@ -53,25 +77,10 @@
             "version": "latest"
         }
     },
-    // Host
     "hostRequirements": {
-        "cpus": 1
+        "cpus": 2
     },
-    // Ports
-    "portsAttributes": {
-        "3000": {
-            "label": "Application",
-            "onAutoForward": "openPreview"
-        }
-    },
-    "forwardPorts": [3000],
-    // Commands
     "waitFor": "onCreateCommand",
-    "updateContentCommand": "npm install",
     "postCreateCommand": "bash .devcontainer/setup.sh",
-    "postAttachCommand": {
-        "server": "npm start"
-    },
-    // User
     "remoteUser": "codespace"
 }
